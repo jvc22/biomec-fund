@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #FFF;
+    background-color: #121214;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bg {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    padding: 2px;
+    background-image: linear-gradient(to right, #fc210d, #450a3b);
+}
+
+.container {
+    max-width: 500px;
+    min-width: 400px;
+    background-color: #121214;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 12px 0;
+}
+
+h1.title {
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.inputs-src, .inputs-proj {
+    display: flex;
+    gap: 30px;
+}
+
+.inputs-src + .inputs-src {
+    margin-bottom: 10px;
+}
+
+input {
+    border: none;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(24 24 27);
+    padding: 8px;
+    width: 145px;
+    margin-top: 4px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#calc {
+    cursor: pointer;
+    height: 52px;
+    width: 150px;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background: none;
+    border-image: linear-gradient(to right, #fc210d, #450a3b) 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color .2s;
+    margin-bottom: 20px;
+}
+
+#calc:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#result {
+    margin-bottom: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(73, 73, 73);
+}

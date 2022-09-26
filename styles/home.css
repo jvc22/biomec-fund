@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Handsome Boys';
+    src: URL('../fonts/HandsomeBoys-2OXRv.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #FFF;
+    background-color: #121214;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bg {
+    margin-top: 60px;
+    padding: 2px;
+    background-image: linear-gradient(to right, #fc210d, #450a3b);
+}
+
+.container {
+    max-width: 500px;
+    min-width: 400px;
+    background-color: #121214;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 12px 0;
+}
+
+h1.title {
+    text-align: center;
+    line-height: 35px;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+    pointer-events: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #e0e0e0;
+}
+
+a#icon1, a#icon2, a#icon3 {
+    transition: color .2s;
+}
+
+a#icon1:hover {
+    color: #fc210d;
+}
+
+a#icon2:hover {
+    color: #630a1d;
+}
+
+a#icon3:hover {
+    color: #450a3b;
+}
+
+button {
+    cursor: pointer;
+    height: 56px;
+    width: 250px;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    background: none;
+    border-image: linear-gradient(to right, #fc210d, #450a3b) 1;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: background-color .2s;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+a.atv + a.atv {
+    margin-top: 20px;
+}
+
+.personal {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 28px;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+p.signature {
+    background: linear-gradient(to right, #fc210d, #450a3b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: 'Handsome Boys', sans-serif;
+    font-size: 45px;
+    line-height: 52px;
+    font-weight: 600;
+}
