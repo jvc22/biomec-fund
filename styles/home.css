@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: url('/assets/gam1564.cur'), auto;
+    cursor: url('/assets/cursor.cur'), auto;
 }
 
 @font-face {
@@ -56,6 +56,11 @@ a {
     text-decoration: none;
 }
 
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
 a:link {
     color: #e0e0e0;
 }
@@ -77,7 +82,7 @@ a#icon3:hover {
 }
 
 button {
-    cursor: url('/assets/gam1564.cur'), auto;
+    cursor: url('/assets/cursor.cur'), auto;
     height: 56px;
     width: 250px;
     color: #FFF;

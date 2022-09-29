@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: url('/assets/gam1564.cur'), auto;
+    cursor: url('/assets/cursor.cur'), auto;
 }
 
 body {
@@ -84,7 +84,7 @@ input[type=number] {
 }
 
 #calc {
-    cursor: url('/assets/gam1564.cur'), auto;
+    cursor: url('/assets/cursor.cur'), auto;
     height: 52px;
     width: 150px;
     color: #FFF;
