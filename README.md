@@ -9,5 +9,5 @@
 </h1>
 
 <video>
-  <source src="./assets/usage.mp4">
+  <source src="./assets/usage.mp4" type="video/mp4">
 </video>
