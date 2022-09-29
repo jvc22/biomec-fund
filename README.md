@@ -5,7 +5,6 @@
 </h1>
 
 <img src="./assets/usage.png" alt="usage">
-<br>
 
 <h2>
 JavaScript code
