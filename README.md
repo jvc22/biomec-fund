@@ -6,8 +6,12 @@
 <img src="./assets/usage.png" alt="usage">
 
 <h2>
-JavaScript Code for Calculations
+Atv. 3 • Task 1
 </h2>
+
+<h3>
+JavaScript Code for Calculations
+</h3>
 
 ```javascript
 function calculateIntersectionPoint(){
