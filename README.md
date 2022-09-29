@@ -7,7 +7,7 @@
 <img src="./assets/usage.png" alt="usage">
 
 <h2>
-JavaScript code
+JavaScript Code for Calculations
 </h2>
 
 ```javascript
@@ -71,18 +71,14 @@ function calculateIntersectionPoint(){
     var layout = {
         width: 380,
         height: 300,
-
         xaxis: {
             title: "Eixo 1"
         },
         yaxis: {
             title: "Eixo 2"
         },
-
         title: 'Intersecção de retas "Câmera-Projeção"',
-
         showlegend: true,
-
         font: {
             family: 'Poppins'
         }
