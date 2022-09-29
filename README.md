@@ -4,7 +4,7 @@
 </h1>
 
 <img src="./assets/usage.png" alt="usage">
-<p align="center" style="font-size:1.2em">Access the WebApp <a href="https://biomec.netlify.app/" target="_blank">here</a>.</p>
+<p align="center">Access the WebApp <a href="https://biomec.netlify.app/" target="_blank">here</a>.</p>
 
 <h2>
 Atv. 3 • Task 1
