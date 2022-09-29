@@ -8,6 +8,4 @@
   <em>University of São Paulo • 2022</em>
 </h1>
 
-<video>
-  <source src="./assets/usage.mp4" type="video/mp4">
-</video>
+<img src="./assets/usage.png" alt="usage">
