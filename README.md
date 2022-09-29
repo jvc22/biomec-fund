@@ -8,4 +8,4 @@
   <em>University of São Paulo • 2022</em>
 </h1>
 
-![screenshot](./assets/usage.gif)
+<img src="./assets/usage.gif">
