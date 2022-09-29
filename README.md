@@ -1,9 +1,9 @@
 <h1 align="center">
-  <br>
   <a href="https://ibm.fmrp.usp.br/">
-    <img src="./assets/logo-ibm.png" alt="IBm" width="200">
+    <img src="./assets/logo-ibm.png" alt="IBm" width="200" target="_blank">
   </a>
+  <br><br>
+  Fundamentals of Biomechanical Informatic
   <br>
-  RIB0110 • Fundamentos de Informática em Biomecânica
-  <br>
+  <em style="font-size:22px">University of São Paulo • 2022</em>
 </h1>
