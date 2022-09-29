@@ -5,5 +5,5 @@
   <br><br>
   Fundamentals of Biomechanical Informatic
   <br>
-  <em style="font-size:22px">University of São Paulo • 2022</em>
+  _University of São Paulo • 2022_
 </h1>
