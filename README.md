@@ -93,3 +93,99 @@ function calculateIntersectionPoint(){
   }    
 }
 ```
+
+<h2>
+Atv. 5 • Task 3
+</h2>
+
+<h3>
+JavaScript Code for Calculations
+</h3>
+
+```javascript
+
+function calculateRotation() {
+  function rotationMatrix(ang1, ang2, ang3, order) {
+      var c1, c2, c3, matrix, s1, s2, s3;
+      c1 = (Math.cos(ang1 * Math.PI / 180));
+      s1 = (Math.sin(ang1 * Math.PI / 180));
+      c2 = (Math.cos(ang2 * Math.PI / 180));
+      s2 = (Math.sin(ang2 * Math.PI / 180));
+      c3 = (Math.cos(ang3 * Math.PI / 180));
+      s3 = (Math.sin(ang3 * Math.PI / 180));
+
+      if(order === "xzx") {
+          matrix = [[c2, -c3 * s2, s2 * s3], [c1 * s2, c1 * c2 * c3 - s1 * s3, -c3 * s1 - c1 * c2 * s3], [s1 * s2, c1 * s3 + c2 * c3 * s1, c1 * c3 - c2 * s1 * s3]];
+      } else {
+          if (order === "xyx") {
+          matrix = [[c2, s2 * s3, c3 * s2], [s1 * s2, c1 * c3 - c2 * s1 * s3, -c1 * s3 - c2 * c3 * s1], [-c1 * s2, c3 * s1 + c1 * c2 * s3, c1 * c2 * c3 - s1 * s3]];
+          } else {
+          if (order === "yxy") {
+              matrix = [[c1 * c3 - c2 * s1 * s3, s1 * s2, c1 * s3 + c2 * c3 * s1], [s2 * s3, c2, -c3 * s2], [-c3 * s1 - c1 * c2 * s3, c1 * s2, c1 * c2 * c3 - s1 * s3]];
+          } else {
+              if (order === "yzy") {
+              matrix = [[c1 * c2 * c3 - s1 * s3, -c1 * s2, c3 * s1 + c1 * c2 * s3], [c3 * s2, c2, s2 * s3], [-c1 * s3 - c2 * c3 * s1, s1 * s2, c1 * c3 - c2 * s1 * s3]];
+              } else {
+              if (order === "zyz") {
+                  matrix = [[c1 * c2 * c3 - s1 * s3, -c3 * s1 - c1 * c2 * s3, c1 * s2], [c1 * s3 + c2 * c3 * s1, c1 * c3 - c2 * s1 * s3, s1 * s2], [-c3 * s2, s2 * s3, c2]];
+              } else {
+                  if (order === "zxz") {
+                  matrix = [[c1 * c3 - c2 * s1 * s3, -c1 * s3 - c2 * c3 * s1, s1 * s2], [c3 * s1 + c1 * c2 * s3, c1 * c2 * c3 - s1 * s3, -c1 * s2], [s2 * s3, c3 * s2, c2]];
+                  } else {
+                  if (order === "xyz") {
+                      matrix = [[c2 * c3, -c2 * s3, s2], [c1 * s3 + c3 * s1 * s2, c1 * c3 - s1 * s2 * s3, -c2 * s1], [s1 * s3 - c1 * c3 * s2, c3 * s1 + c1 * s2 * s3, c1 * c2]];
+                  } else {
+                      if (order === "xzy") {
+                      matrix = [[c2 * c3, -s2, c2 * s3], [s1 * s3 + c1 * c3 * s2, c1 * c2, c1 * s2 * s3 - c3 * s1], [c3 * s1 * s2 - c1 * s3, c2 * s1, c1 * c3 + s1 * s2 * s3]];
+                      } else {
+                      if (order === "yxz") {
+                          matrix = [[c1 * c3 + s1 * s2 * s3, c3 * s1 * s2 - c1 * s3, c2 * s1], [c2 * s3, c2 * c3, -s2], [c1 * s2 * s3 - c3 * s1, c1 * c3 * s2 + s1 * s3, c1 * c2]];
+                      } else {
+                          if (order === "yzx") {
+                          matrix = [[c1 * c2, s1 * s3 - c1 * c3 * s2, c3 * s1 + c1 * s2 * s3], [s2, c2 * c3, -c2 * s3], [-c2 * s1, c1 * s3 + c3 * s1 * s2, c1 * c3 - s1 * s2 * s3]];
+                          } else {
+                          if (order === "zyx") {
+                              matrix = [[c1 * c2, c1 * s2 * s3 - c3 * s1, s1 * s3 + c1 * c3 * s2], [c2 * s1, c1 * c3 + s1 * s2 * s3, c3 * s1 * s2 - c1 * s3], [-s2, c2 * s3, c2 * c3]];
+                          } else {
+                              if (order === "zxy") {
+                              matrix = [[c1 * c3 - s1 * s2 * s3, -c2 * s1, c1 * s3 + c3 * s1 * s2], [c3 * s1 + c1 * s2 * s3, c1 * c2, s1 * s3 - c1 * c3 * s2], [-c2 * s3, s2, c2 * c3]];
+                              }
+                          }
+                          }
+                      }
+                      }
+                  }
+                  }
+              }
+              }
+          }
+          }
+      }
+
+      divR.innerHTML = `Elementos da Matriz de Rotação gerada: <br> <br> M11 = ${matrix[0][0].toFixed(3)} | M12 = ${matrix[0][1].toFixed(3)} | M13 = ${matrix[0][2].toFixed(3)}<br>M21 = ${matrix[1][0].toFixed(3)} | M22 = ${matrix[1][1].toFixed(3)} | M23 = ${matrix[1][2].toFixed(3)}<br>M31 = ${matrix[2][0].toFixed(3)} | M32 = ${matrix[2][1].toFixed(3)} | M33 = ${matrix[2][2].toFixed(3)}`;
+  }
+
+  const divR = document.getElementById('result')
+  var ang1 = window.document.getElementById("ang1").value;
+  var ang2 = window.document.getElementById("ang2").value;
+  var ang3 = window.document.getElementById("ang3").value;
+  var order = window.document.getElementById("order").value;
+
+  var orders = ["xzx", "xyx", "yxy", "yzy", "zyz", "zxz", "xyz", "xzy", "yxz", "yzx", "zyx", "zxy"]
+
+  if(ang1 == '' || ang2 == '' || ang3 == '' || order == '') {
+      alert('Preencha todos os campos.');
+  }
+  else if(!orders.includes(order)) {
+      alert('Selecione a ordem corretamente.<br>Possibilidades: xzx, xyx, yxy, yzy, zyz, zxz, xyz, xzy, yxz, yzx, zyx, zxy.');
+  }
+  else {
+      var ang1 = Number(ang1);
+      var ang2 = Number(ang2);
+      var ang3 = Number(ang3);
+
+      rotationMatrix(ang1, ang2, ang3, order)
+  }
+}
+
+```
