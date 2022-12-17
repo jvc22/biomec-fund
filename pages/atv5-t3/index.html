@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/atv5-t3.css">
+    <link rel="icon" href="../../assets/favicon.png" type="image/png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <title>Atv. 5 • Task 3</title>
+</head>
+<body>
+    <div class="bg">
+        <div class="container">
+            <h1 class="title">Atv. 5 • Task 3 <i class="ph-chart-line-up-bold"></i></h1>
+
+            <div class="form">
+                <div class="inputs-src">
+                    <div>
+                        <p>Ângulo 1</p> 
+                        <input type="number" placeholder="graus °" id="ang1">
+                    </div>
+                    <div>
+                        <p>Ângulo 2</p> 
+                        <input type="number" placeholder="graus °" id="ang2">
+                    </div>
+                </div>
+                <div class="inputs-src">
+                    <div>
+                        <p>Ângulo 3</p> 
+                        <input type="number" placeholder="graus °" id="ang3">
+                    </div>
+                    <div>
+                        <p>Ordem de rot.</p> 
+                        <input type="text" placeholder="xzy, zxz, yzx, ..." id="order">
+                    </div>
+                </div>
+            </div>
+
+            <button id="calc" onclick="calculateRotation()"><i class="ph-function"></i> Calcular</button>
+
+            <div id="result"></div>
+        </div>
+    </div>
+</body>
+<script>
+    function calculateRotation() {
+        function rotationMatrix(ang1, ang2, ang3, order) {
+            var c1, c2, c3, matrix, s1, s2, s3;
+            c1 = (Math.cos(ang1 * Math.PI / 180));
+            s1 = (Math.sin(ang1 * Math.PI / 180));
+            c2 = (Math.cos(ang2 * Math.PI / 180));
+            s2 = (Math.sin(ang2 * Math.PI / 180));
+            c3 = (Math.cos(ang3 * Math.PI / 180));
+            s3 = (Math.sin(ang3 * Math.PI / 180));
+
+            if(order === "xzx") {
+                matrix = [[c2, -c3 * s2, s2 * s3], [c1 * s2, c1 * c2 * c3 - s1 * s3, -c3 * s1 - c1 * c2 * s3], [s1 * s2, c1 * s3 + c2 * c3 * s1, c1 * c3 - c2 * s1 * s3]];
+            } else {
+                if (order === "xyx") {
+                matrix = [[c2, s2 * s3, c3 * s2], [s1 * s2, c1 * c3 - c2 * s1 * s3, -c1 * s3 - c2 * c3 * s1], [-c1 * s2, c3 * s1 + c1 * c2 * s3, c1 * c2 * c3 - s1 * s3]];
+                } else {
+                if (order === "yxy") {
+                    matrix = [[c1 * c3 - c2 * s1 * s3, s1 * s2, c1 * s3 + c2 * c3 * s1], [s2 * s3, c2, -c3 * s2], [-c3 * s1 - c1 * c2 * s3, c1 * s2, c1 * c2 * c3 - s1 * s3]];
+                } else {
+                    if (order === "yzy") {
+                    matrix = [[c1 * c2 * c3 - s1 * s3, -c1 * s2, c3 * s1 + c1 * c2 * s3], [c3 * s2, c2, s2 * s3], [-c1 * s3 - c2 * c3 * s1, s1 * s2, c1 * c3 - c2 * s1 * s3]];
+                    } else {
+                    if (order === "zyz") {
+                        matrix = [[c1 * c2 * c3 - s1 * s3, -c3 * s1 - c1 * c2 * s3, c1 * s2], [c1 * s3 + c2 * c3 * s1, c1 * c3 - c2 * s1 * s3, s1 * s2], [-c3 * s2, s2 * s3, c2]];
+                    } else {
+                        if (order === "zxz") {
+                        matrix = [[c1 * c3 - c2 * s1 * s3, -c1 * s3 - c2 * c3 * s1, s1 * s2], [c3 * s1 + c1 * c2 * s3, c1 * c2 * c3 - s1 * s3, -c1 * s2], [s2 * s3, c3 * s2, c2]];
+                        } else {
+                        if (order === "xyz") {
+                            matrix = [[c2 * c3, -c2 * s3, s2], [c1 * s3 + c3 * s1 * s2, c1 * c3 - s1 * s2 * s3, -c2 * s1], [s1 * s3 - c1 * c3 * s2, c3 * s1 + c1 * s2 * s3, c1 * c2]];
+                        } else {
+                            if (order === "xzy") {
+                            matrix = [[c2 * c3, -s2, c2 * s3], [s1 * s3 + c1 * c3 * s2, c1 * c2, c1 * s2 * s3 - c3 * s1], [c3 * s1 * s2 - c1 * s3, c2 * s1, c1 * c3 + s1 * s2 * s3]];
+                            } else {
+                            if (order === "yxz") {
+                                matrix = [[c1 * c3 + s1 * s2 * s3, c3 * s1 * s2 - c1 * s3, c2 * s1], [c2 * s3, c2 * c3, -s2], [c1 * s2 * s3 - c3 * s1, c1 * c3 * s2 + s1 * s3, c1 * c2]];
+                            } else {
+                                if (order === "yzx") {
+                                matrix = [[c1 * c2, s1 * s3 - c1 * c3 * s2, c3 * s1 + c1 * s2 * s3], [s2, c2 * c3, -c2 * s3], [-c2 * s1, c1 * s3 + c3 * s1 * s2, c1 * c3 - s1 * s2 * s3]];
+                                } else {
+                                if (order === "zyx") {
+                                    matrix = [[c1 * c2, c1 * s2 * s3 - c3 * s1, s1 * s3 + c1 * c3 * s2], [c2 * s1, c1 * c3 + s1 * s2 * s3, c3 * s1 * s2 - c1 * s3], [-s2, c2 * s3, c2 * c3]];
+                                } else {
+                                    if (order === "zxy") {
+                                    matrix = [[c1 * c3 - s1 * s2 * s3, -c2 * s1, c1 * s3 + c3 * s1 * s2], [c3 * s1 + c1 * s2 * s3, c1 * c2, s1 * s3 - c1 * c3 * s2], [-c2 * s3, s2, c2 * c3]];
+                                    }
+                                }
+                                }
+                            }
+                            }
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+
+            divR.innerHTML = `Elementos da Matriz de Rotação gerada: <br> <br> M11 = ${matrix[0][0].toFixed(3)} | M12 = ${matrix[0][1].toFixed(3)} | M13 = ${matrix[0][2].toFixed(3)}<br>M21 = ${matrix[1][0].toFixed(3)} | M22 = ${matrix[1][1].toFixed(3)} | M23 = ${matrix[1][2].toFixed(3)}<br>M31 = ${matrix[2][0].toFixed(3)} | M32 = ${matrix[2][1].toFixed(3)} | M33 = ${matrix[2][2].toFixed(3)}`;
+        }
+
+        const divR = document.getElementById('result')
+        var ang1 = window.document.getElementById("ang1").value;
+        var ang2 = window.document.getElementById("ang2").value;
+        var ang3 = window.document.getElementById("ang3").value;
+        var order = window.document.getElementById("order").value;
+
+        var orders = ["xzx", "xyx", "yxy", "yzy", "zyz", "zxz", "xyz", "xzy", "yxz", "yzx", "zyx", "zxy"]
+
+        if(ang1 == '' || ang2 == '' || ang3 == '' || order == '') {
+            alert('Preencha todos os campos.');
+        }
+        else if(!orders.includes(order)) {
+            alert('Selecione a ordem corretamente.<br>Possibilidades: xzx, xyx, yxy, yzy, zyz, zxz, xyz, xzy, yxz, yzx, zyx, zxy.');
+        }
+        else {
+            var ang1 = Number(ang1);
+            var ang2 = Number(ang2);
+            var ang3 = Number(ang3);
+
+            rotationMatrix(ang1, ang2, ang3, order)
+        }
+    }
+</script>
+</html>
